@@ -20,9 +20,9 @@ RUN \
 RUN sed -i 's/bobby/powerline/' ~/.bashrc
 
 # Install git, base, history plugins for bash-it
-RUN /bin/bash -i -c 'bash-it enable plugin base'
-RUN /bin/bash -i -c 'bash-it enable plugin history'
-RUN /bin/bash -i -c 'bash-it enable plugin git'
+RUN /bin/bash -il -c 'bash-it enable plugin base'
+RUN /bin/bash -il -c 'bash-it enable plugin history'
+RUN /bin/bash -il -c 'bash-it enable plugin git'
 
 # Grab my .vimrc
 ADD https://github.com/twantrd/dotfiles/blob/raw/.vimrc /root/.vimrc
