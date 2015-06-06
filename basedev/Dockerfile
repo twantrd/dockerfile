@@ -10,7 +10,7 @@ RUN yum install -y vim-enhanced vim-minimal vim-common jwhois mlocate strace bin
 RUN rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
-# Install bash_it shell
+# Install bash_it
 RUN \
         git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && \
         cd ~/.bash_it && \
@@ -20,9 +20,9 @@ RUN \
 RUN sed -i 's/bobby/powerline/' ~/.bashrc
 
 # Install git, base, history plugins for bash-it
-RUN /bin/bash -il -c 'bash-it enable plugin base'
-RUN /bin/bash -il -c 'bash-it enable plugin history'
-RUN /bin/bash -il -c 'bash-it enable plugin git'
+RUN /bin/bash -i -c 'bash-it enable plugin base'
+RUN /bin/bash -i -c 'bash-it enable plugin history'
+RUN /bin/bash -i -c 'bash-it enable plugin git'
 
 # Grab my .vimrc
-ADD https://github.com/twantrd/dotfiles/blob/raw/.vimrc /root/.vimrc
+ADD https://github.com/twantrd/dotfiles/raw/master/.vimrc /root/.vimrc
