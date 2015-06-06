@@ -12,7 +12,6 @@ RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noar
 
 # Install bash_it shell
 RUN \
-        cd / && \
         git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && \
         cd ~/.bash_it && \
         bash ./install.sh --none
